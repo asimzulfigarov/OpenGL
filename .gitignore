@@ -1,0 +1,199 @@
+# =========================================================
+# OpenGL / C++ Project .gitignore
+# Supports:
+# - Visual Studio
+# - VS Code
+# - CMake
+# - Makefiles / Ninja
+# - GCC / Clang / MSVC
+# - GLFW / GLEW / GLAD
+# - Debug / Release builds
+# - Generated binaries and caches
+# =========================================================
+
+# =========================================================
+# Visual Studio
+# =========================================================
+.vs/
+*.VC.db
+*.VC.opendb
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.ipch
+*.aps
+*.ncb
+*.opendb
+
+# Visual Studio build folders
+Debug/
+Release/
+x64/
+x86/
+Win32/
+ARM/
+ARM64/
+
+# Visual Studio generated files
+*.ilk
+*.pdb
+*.idb
+*.tlog
+*.lastbuildstate
+*.cache
+*.obj
+*.iobj
+*.ipdb
+*.pch
+*.tmp
+*.log
+
+# =========================================================
+# CMake
+# =========================================================
+build/
+build*/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+Testing/
+Makefile
+CMakeScripts/
+CPackConfig.cmake
+CPackSourceConfig.cmake
+
+# =========================================================
+# Make / Ninja
+# =========================================================
+*.ninja
+.ninja_deps
+.ninja_log
+
+# =========================================================
+# GCC / Clang
+# =========================================================
+*.o
+*.a
+*.so
+*.dylib
+*.dSYM/
+*.gcno
+*.gcda
+*.gcov
+
+# =========================================================
+# Executables
+# =========================================================
+*.exe
+*.out
+*.app
+*.dll
+*.lib
+*.exp
+
+# =========================================================
+# VS Code
+# =========================================================
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# =========================================================
+# JetBrains CLion
+# =========================================================
+.idea/
+cmake-build-debug/
+cmake-build-release/
+
+# =========================================================
+# Logs and Temporary Files
+# =========================================================
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+Thumbs.db
+Desktop.ini
+
+# =========================================================
+# OpenGL Generated Loaders
+# (Ignore only if you regenerate them automatically)
+# =========================================================
+# glad.c
+# glad.h
+# khrplatform.h
+
+# =========================================================
+# Package Managers
+# =========================================================
+
+# vcpkg installed binaries
+installed/
+
+# Conan
+.conan/
+conanbuild/
+conan.lock
+conaninfo.txt
+
+# =========================================================
+# Testing / Coverage
+# =========================================================
+coverage/
+*.profraw
+*.profdata
+
+# =========================================================
+# Archives
+# =========================================================
+*.zip
+*.7z
+*.tar
+*.gz
+
+# =========================================================
+# macOS
+# =========================================================
+.DS_Store
+
+# =========================================================
+# Linux
+# =========================================================
+.directory
+
+# =========================================================
+# Runtime-generated Assets (optional)
+# Uncomment if your app generates screenshots or recordings
+# screenshots/
+# captures/
+# recordings/
+
+# =========================================================
+# Shader cache (optional)
+# Uncomment if your application writes compiled shader caches
+# shader_cache/
+
+# =========================================================
+# Keep important project files
+# =========================================================
+!src/
+!include/
+!shaders/
+!assets/
+!textures/
+!models/
+!CMakeLists.txt
+!*.sln
+!*.vcxproj
+!*.vcxproj.filters
+!README.md
+!LICENSE
