@@ -3,7 +3,7 @@
 #include <GLFW/glfw3.h>
 
 #include <iostream>
-
+#include <memory>
 
 
 #include "Renderer.h"
@@ -15,9 +15,12 @@
 
 
 
+#include "tools/cpp/runfiles/runfiles.h"
 
 
-int main(void)
+using bazel::tools::cpp::runfiles::Runfiles;
+
+int main(int argc, char** argv)
 {
     GLFWwindow* window;
 
@@ -75,8 +78,25 @@ int main(void)
         IndexBuffer ib(indicies, 6);                             // Index buffer creation
 
 
+
+
+        std::string error;
+        std::string argv0 = argv[0];
+        std::unique_ptr<Runfiles> runfiles(Runfiles::Create(argv0, &error));
+
+        if (!runfiles)
+        {
+            std::cout << "[FATAL] Runfiles failed: " << error << std::endl;
+            return -1;
+        }
+
+        std::string path = runfiles->Rlocation(
+            "opengl_app/application.shader"
+        );
         
-        Shader shader("application.shader");                     // Define shaders
+        std::cout << "Shader path: " << path << std::endl;
+
+        Shader shader(path);                     // Define shaders
         shader.Bind();                                           //glUseProgram(shader);
         shader.SetUniform4f("u_Color", 0.8f, 0.3f, 0.8f, 1.0f);  // Uniform logic
 

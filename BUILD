@@ -20,6 +20,13 @@ cc_library(
     visibility = ["//visibility:private"],
 )
 
+genrule(
+    name = "copy_dll",
+    srcs = ["ThirdParty/GLEW/bin/glew32.dll"],
+    outs = ["glew32.dll"],
+    cmd = "cp $(location ThirdParty/GLEW/bin/glew32.dll) $@",
+)
+
 cc_binary(
     name = "opengl_app",
 
@@ -38,9 +45,15 @@ cc_binary(
         "VertexBufferLayout.h",
     ],
 
+    data = [
+        "application.shader",
+        ":copy_dll",
+    ],
+
     deps = [
         ":glew",
         ":glfw",
+        "@bazel_tools//tools/cpp/runfiles",
     ],
 
     copts = [
