@@ -25,6 +25,9 @@
 *.aps
 *.ncb
 *.opendb
+*.sln
+*.vcxproj*
+.vs/
 
 # Visual Studio build folders
 Debug/
@@ -169,6 +172,15 @@ coverage/
 # Linux
 # =========================================================
 .directory
+
+# =========================================================
+# Bazel
+# =========================================================
+bazel-*
+bazel-bin/
+bazel-out/
+bazel-testlogs/
+.bazelrc.user
 
 # =========================================================
 # Runtime-generated Assets (optional)
